@@ -1,0 +1,474 @@
+/* 01. General */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-background-color: #5F97D3;
+  --secondary-background-color: #4E8CCE;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #868686;
+  background: #eeeeee;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  font-weight: 300;
+}
+
+.page {
+  position: relative;
+  overflow: hidden;
+  padding: 320px 0 0 0;
+}
+
+.clear {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+::-webkit-scrollbar {
+  width: 12.5px;
+  height: 12.5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #eeeeee;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-background-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-background-color);
+}
+
+/* 02. Container */
+.container {
+  position: relative;
+  background: #eeeeee;
+}
+
+.wrapper {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+
+/* 03. Columns */
+.row {
+  position: relative;
+  margin: 0 -10px;
+  padding: 0 0 30px 0;
+}
+
+.row:last-child {
+  padding: 0;
+}
+
+.row .col {
+  padding: 0 12px;
+}
+
+.row:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* 04. Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  margin: 0;
+  margin-bottom: 15px;
+  color: #363636;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 42px;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 38px;
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 34px;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+h6 {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 25px;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+strong {
+  font-weight: 500;
+  color: #363636;
+}
+
+.date {
+  margin: 5px 5px 5px 0;
+  padding: 1px 5px;
+  display: inline-block;
+  vertical-align: top;
+  background: var(--primary-background-color);
+  font-size: 13px;
+  color: #fefefe;
+  border-radius: 2px;
+  transition: all 0.2s ease 0s;
+}
+
+.category {
+  margin: 5px 5px 5px 0;
+  padding: 1px 5px;
+  display: inline-block;
+  vertical-align: top;
+  background: #efefef;
+  font-size: 13px;
+  color: #363636;
+  border-radius: 2px;
+  transition: all 0.2s ease 0s;
+}
+
+a.category:hover {
+  color: #fefefe;
+}
+
+/* 05. Links */
+a {
+  color: #363636;
+  text-decoration: none;
+  opacity: 1;
+  outline: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #efefef;
+}
+
+/* 06. Buttons */
+a.button,
+.button {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  height: 42px;
+  line-height: 42px;
+  padding: 0;
+  font-weight: 400;
+  text-align: center;
+  color: #fefefe;
+  font-size: 14px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  background: var(--primary-background-color);
+  cursor: pointer;
+  transition: all 0.2s ease 0s;
+  border-radius: 50px;
+}
+
+a.button.extra,
+.button.extra {
+  background: #efefef;
+  color: #363636;
+}
+
+a.button .circle,
+.button .circle {
+  padding: 0 30px;
+}
+
+/* 07. Preloader */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #eeeeee;
+  z-index: 1000;
+}
+
+.preloader .spinner {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+}
+
+.preloader .spinner .double-bounce1,
+.preloader .spinner .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  background: var(--primary-background-color);
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: sk-bounce 2s infinite ease-in-out;
+  border-radius: 50%;
+}
+
+.preloader .spinner .double-bounce2 {
+  animation-delay: -1s;
+}
+
+/* 08. Forms */
+input,
+textarea,
+button {
+  margin: 0 0 20px 0;
+  padding: 0;
+  display: block;
+  width: 100%;
+  height: 52px;
+  background: none;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #868686;
+  border: none;
+  border-bottom: 1px solid #00000033;
+  resize: none;
+  outline: 0;
+  transition: all 0.2s ease 0s;
+}
+
+input:focus,
+textarea:focus,
+button:focus {
+  color: #363636;
+  border-bottom: 1px solid #363636;
+}
+
+textarea {
+  height: 115px;
+  padding: 15px 0 0 0;
+}
+
+button {
+  width: auto;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  border-bottom: 1px solid #00000033;
+  cursor: pointer;
+  color: #363636;
+}
+
+button:hover {
+  border-bottom: 1px solid #363636;
+}
+
+label,
+legend {
+  display: block;
+  padding-bottom: 10px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+fieldset {
+  border-width: 0;
+  padding: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline;
+}
+
+::placeholder {
+  color: #363636;
+}
+
+input.error,
+textarea.error {
+  border-bottom: 1px solid #ff0000;
+}
+
+label.error {
+  color: #ff0000;
+}
+
+/* 09. Lists */
+ol,
+ul {
+  list-style: none;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0px;
+}
+
+li {
+  margin-bottom: 0px;
+}
+
+/* 10. Code */
+code {
+  background: #eeeeee;
+  font-size: 16px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  margin: 20px 0;
+  padding: 10px 20px;
+}
+
+/* 11. Tables */
+table {
+  width: 100%;
+  margin: 30px 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+th {
+  font-weight: 500;
+  border: none;
+  border-bottom: 1px solid #eeeeee;
+  color: #363636;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+td {
+  border: none;
+  border-bottom: 1px solid #eeeeee;
+  padding: 12px 15px;
+  text-align: left;
+  color: #868686;
+}
+
+/* 12. Alignment */
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-none {
+  float: none;
+}
+
+.full-width {
+  max-width: 100%;
+  width: 100%;
+}
+
+.full-max-width {
+  max-width: 100%;
+  width: 0 auto;
+}
+
+.centrize {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+/* 13. Text Formating */
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-regular {
+  font-weight: 400;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+/* 14. Animations */
+.ink {
+  display: block;
+  position: absolute;
+  background: #00000033;
+  border-radius: 100%;
+  transform: scale(0);
+}
+
+.button-animated .circle {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.animate {
+  -webkit-animation: ripple 0.6s linear;
+  animation: ripple 0.6s linear;
+}
